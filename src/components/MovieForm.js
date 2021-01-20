@@ -22,7 +22,7 @@ export const MovieForm = () => {
           value={rating} 
           maxRating={5} 
           onRate={(_, data) => {
-            console.log(data);
+            setRating(data.rating);
         }}
       />
       </Form.Field>
