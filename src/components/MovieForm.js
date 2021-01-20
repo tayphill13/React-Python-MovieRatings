@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Input, Rating } from 'semantic-ui-react'
+import { Button, Form, Input, Rating } from 'semantic-ui-react'
 
 export const MovieForm = () => {
   const [title, setTitle] = useState("");
@@ -25,6 +25,9 @@ export const MovieForm = () => {
             setRating(data.rating);
         }}
       />
+      </Form.Field>
+      <Form.Field>
+        <Button>Submit</Button>
       </Form.Field>
     </Form>
   )
