@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Input, Rating } from 'semantic-ui-react'
 
-export const MovieForm = () => {
+export const MovieForm = ({ onNewMovie }) => {
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState(1);
 
@@ -20,7 +20,7 @@ export const MovieForm = () => {
         <Rating 
           icon='star' 
           size='massive'
-          value={rating} 
+          rating={rating} 
           maxRating={5} 
           onRate={(_, data) => {
             setRating(data.rating);
@@ -40,6 +40,9 @@ export const MovieForm = () => {
 
           if (response.ok) {
             console.log("response worked!");
+            onNewMovie(movie)
+            setTitle('');
+            setRating(1);
           }
         }}>Submit</Button>
       </Form.Field>

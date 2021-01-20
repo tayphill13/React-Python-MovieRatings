@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <Container style={{ marginTop: 40 }}>
-        <MovieForm />  
+        <MovieForm onNewMovie={movie => setMovies(currentMovies => [movie, ...currentMovies])} />  
         <Movies movies={movies} />
       </Container>
     </div>
