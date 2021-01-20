@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import { Container } from 'semantic-ui-react';
 import './App.css';
+import { MovieForm } from './components/MovieForm';
 import { Movies } from "./components/Movies";
 
 function App() {  
@@ -15,7 +17,10 @@ function App() {
 
   return (
     <div className="App">
-      <Movies movies={movies} />
+      <Container style={{ marginTop: 40 }}>
+        <MovieForm />  
+        <Movies movies={movies} />
+      </Container>
     </div>
   );
 }

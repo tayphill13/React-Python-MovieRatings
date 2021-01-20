@@ -8,11 +8,10 @@ export const Movies = ({ movies }) => {
         return (
           <List.Item key={movie.title}>
             <Header>{movie.title}</Header>
-            <Rating rating={movie.rating} maxRating={5} />
+            <Rating rating={movie.rating} maxRating={5} disabled />
           </List.Item>
         )
       })}
     </List>
-    // <div>{movies.length}</div>
   )
 }
