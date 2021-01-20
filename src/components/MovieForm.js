@@ -19,6 +19,7 @@ export const MovieForm = () => {
       <Form.Field>
         <Rating 
           icon='star' 
+          size='massive'
           value={rating} 
           maxRating={5} 
           onRate={(_, data) => {
@@ -27,7 +28,20 @@ export const MovieForm = () => {
       />
       </Form.Field>
       <Form.Field>
-        <Button>Submit</Button>
+        <Button size='huge' onClick={async () => {
+          const movie = { title, rating};
+          const response = await fetch('/add_movie', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(movie)
+          })
+
+          if (response.ok) {
+            console.log("response worked!");
+          }
+        }}>Submit</Button>
       </Form.Field>
     </Form>
   )

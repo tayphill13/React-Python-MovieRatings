@@ -7,8 +7,8 @@ export const Movies = ({ movies }) => {
       {movies.map(movie => {
         return (
           <List.Item key={movie.title}>
-            <Header>{movie.title}</Header>
-            <Rating rating={movie.rating} maxRating={5} disabled />
+            <Header size="huge">{movie.title}</Header>
+            <Rating rating={movie.rating} size='huge' maxRating={5} disabled />
           </List.Item>
         )
       })}
